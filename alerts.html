@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Alert History | WSERS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Alert History Page */
+
+        .alerts-page {
+            min-height: 100vh;
+            background: #f5f7fb;
+        }
+
+        .alerts-header {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 18px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .alerts-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .alerts-brand-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: #111827;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .alerts-brand h2 {
+            margin: 0;
+            font-size: 21px;
+            color: #111827;
+        }
+
+        .alerts-brand span {
+            display: block;
+            font-size: 12px;
+            color: #6b7280;
+            margin-top: 2px;
+        }
+
+        .logout-btn {
+            border: 1px solid #d1d5db;
+            background: white;
+            color: #374151;
+            padding: 9px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .logout-btn:hover {
+            background: #f3f4f6;
+        }
+
+        .alerts-content {
+            max-width: 1050px;
+            margin: 0 auto;
+            padding: 40px 24px 60px;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #4b5563;
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 22px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .alerts-title-section {
+            margin-bottom: 28px;
+        }
+
+        .alerts-title-section h1 {
+            margin: 0 0 8px;
+            font-size: 32px;
+            color: #111827;
+        }
+
+        .alerts-title-section p {
+            margin: 0;
+            color: #6b7280;
+            font-size: 15px;
+        }
+
+        .info-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .info-card h3 {
+            margin: 0 0 7px;
+            color: #111827;
+            font-size: 17px;
+        }
+
+        .info-card p {
+            margin: 0;
+            color: #6b7280;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        #loadingState {
+            text-align: center;
+            padding: 45px 20px;
+            color: #6b7280;
+        }
+
+        #emptyState {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            padding: 50px 25px;
+            text-align: center;
+        }
+
+        #emptyState h3 {
+            margin: 0 0 8px;
+            color: #111827;
+        }
+
+        #emptyState p {
+            margin: 0;
+            color: #6b7280;
+        }
+
+        #alertsContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .alert-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            padding: 22px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        }
+
+        .alert-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .alert-card-header h3 {
+            margin: 0 0 5px;
+            color: #111827;
+            font-size: 18px;
+        }
+
+        .alert-card-header p {
+            margin: 0;
+            color: #6b7280;
+            font-size: 13px;
+        }
+
+        .alert-status {
+            background: #ecfdf5;
+            color: #047857;
+            border: 1px solid #a7f3d0;
+            border-radius: 20px;
+            padding: 5px 11px;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .alert-details {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding-top: 18px;
+        }
+
+        .alert-detail {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .alert-detail strong {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #6b7280;
+        }
+
+        .alert-detail span {
+            color: #374151;
+            font-size: 14px;
+            word-break: break-word;
+        }
+
+        .error-message {
+            background: #fff7ed;
+            border: 1px solid #fed7aa;
+            color: #c2410c;
+            border-radius: 12px;
+            padding: 18px;
+            text-align: center;
+        }
+
+        .privacy-note {
+            margin-top: 28px;
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 16px;
+            color: #6b7280;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 700px) {
+
+            .alerts-header {
+                padding: 15px 20px;
+            }
+
+            .alerts-content {
+                padding: 28px 16px 45px;
+            }
+
+            .alerts-title-section h1 {
+                font-size: 27px;
+            }
+
+            .alert-details {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .alert-card-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="alerts-page">
+
+        <!-- Header -->
+        <header class="alerts-header">
+
+            <div class="alerts-brand">
+
+                <div class="alerts-brand-icon">
+                    W
+                </div>
+
+                <div>
+                    <h2>WSERS</h2>
+                    <span>Women Safety & Emergency Response System</span>
+                </div>
+
+            </div>
+
+            <button
+                class="logout-btn"
+                id="logoutBtn">
+                Logout
+            </button>
+
+        </header>
+
+
+        <!-- Main Content -->
+        <main class="alerts-content">
+
+            <a
+                href="dashboard.html"
+                class="back-link">
+                ← Back to Dashboard
+            </a>
+
+
+            <section class="alerts-title-section">
+
+                <h1>Alert History</h1>
+
+                <p>
+                    View your previous emergency SOS alerts and
+                    associated location information.
+                </p>
+
+            </section>
+
+
+            <!-- Information -->
+            <div class="info-card">
+
+                <h3>Your Emergency Alerts</h3>
+
+                <p>
+                    This section displays emergency alerts created
+                    from your WSERS account. Each alert includes
+                    its date, status, location and alert identifier.
+                </p>
+
+            </div>
+
+
+            <!-- Loading -->
+            <div id="loadingState">
+                Loading alert history...
+            </div>
+
+
+            <!-- Empty State -->
+            <div
+                id="emptyState"
+                style="display: none;">
+
+                <h3>No Emergency Alerts</h3>
+
+                <p>
+                    No emergency alerts have been created
+                    from this account yet.
+                </p>
+
+            </div>
+
+
+            <!-- Alerts will appear here -->
+            <div id="alertsContainer"></div>
+
+
+            <!-- Privacy -->
+            <div class="privacy-note">
+
+                <strong>Privacy and prototype notice:</strong>
+                WSERS is an academic cloud-based prototype.
+                Location information is collected only when the
+                user grants browser location permission. The system
+                does not directly contact police, ambulance or other
+                emergency services.
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- AWS Configuration -->
+    <script src="js/config.js"></script>
+
+    <!-- Alert History JavaScript -->
+    <script src="js/alerts.js"></script>
+
+
+    <!-- Logout -->
+    <script>
+
+        document
+            .getElementById("logoutBtn")
+            .addEventListener("click", function () {
+
+                localStorage.removeItem("idToken");
+                localStorage.removeItem("accessToken");
+                localStorage.removeItem("userEmail");
+                localStorage.removeItem("pendingVerificationEmail");
+
+                window.location.href = "index.html";
+            });
+
+    </script>
+
+</body>
+
+</html>

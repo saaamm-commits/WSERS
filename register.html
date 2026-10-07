@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WSERS | Create Account</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo">WSERS</div>
+
+    <div class="nav-text">
+        Women Safety & Emergency Response System
+    </div>
+</header>
+
+
+<main class="hero">
+
+    <section class="hero-content">
+
+        <div class="badge">
+            🛡️ Secure Registration
+        </div>
+
+        <h1>
+            Create your<br>
+            <span>WSERS account.</span>
+        </h1>
+
+        <p>
+            Create a secure account to manage your emergency contacts,
+            activate SOS alerts and access your safety dashboard.
+        </p>
+
+    </section>
+
+
+    <section class="login-card">
+
+        <div class="login-icon">
+            👤
+        </div>
+
+        <h2>Create Account</h2>
+
+        <p class="login-subtitle">
+            Register securely using your email address
+        </p>
+
+
+        <form id="registerForm">
+
+            <div class="input-group">
+                <label for="registerEmail">Email Address</label>
+
+                <input
+                    type="email"
+                    id="registerEmail"
+                    placeholder="Enter your email"
+                    required
+                >
+            </div>
+
+
+            <div class="input-group">
+                <label for="registerPassword">Password</label>
+
+                <input
+                    type="password"
+                    id="registerPassword"
+                    placeholder="Create a password"
+                    required
+                >
+            </div>
+
+
+            <div class="input-group">
+                <label for="confirmPassword">Confirm Password</label>
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Confirm your password"
+                    required
+                >
+            </div>
+
+
+            <button type="submit" class="login-button">
+                Create Account
+            </button>
+
+        </form>
+
+
+        <div class="divider">
+            <span>OR</span>
+        </div>
+
+
+        <button
+            class="register-button"
+            onclick="window.location.href='index.html'">
+            Back to Sign In
+        </button>
+
+
+        <p class="security-note">
+            🔒 Your account is secured using Amazon Cognito.
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <p>
+        © 2026 WSERS — Women Safety & Emergency Response System
+    </p>
+</footer>
+
+
+<script src="js/config.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@6.3.12/dist/amazon-cognito-identity.min.js"></script>
+
+<script src="js/auth.js"></script>
+
+</body>
+</html>

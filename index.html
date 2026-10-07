@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WSERS | Women Safety & Emergency Response</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            WSERS
+        </div>
+
+        <div class="nav-text">
+            Women Safety & Emergency Response System
+        </div>
+    </header>
+
+
+    <main class="hero">
+
+        <section class="hero-content">
+
+            <div class="badge">
+                🛡️ Cloud-Based Safety Platform
+            </div>
+
+            <h1>
+                Your Safety.<br>
+                <span>Your Priority.</span>
+            </h1>
+
+            <p>
+                A secure cloud-based emergency response system designed
+                to help you quickly manage emergency contacts, activate
+                SOS alerts and share your location when needed.
+            </p>
+
+            <div class="features">
+
+                <div class="feature-card">
+                    <div class="feature-icon">🚨</div>
+                    <h3>Quick SOS</h3>
+                    <p>Activate an emergency alert quickly when you need help.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <h3>Location Sharing</h3>
+                    <p>Share your current location with your emergency response system.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Emergency Contacts</h3>
+                    <p>Keep important emergency contacts organised in one place.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="login-card">
+
+            <div class="login-icon">
+                🛡️
+            </div>
+
+            <h2>Welcome to WSERS</h2>
+
+            <p class="login-subtitle">
+                Sign in to access your safety dashboard
+            </p>
+
+            <form id="loginForm">
+
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+                </div>
+
+
+                <button type="submit" class="login-button">
+                    Sign In
+                </button>
+
+            </form>
+
+
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+
+            <button
+    class="register-button"
+    onclick="window.location.href='register.html'">
+    Create an Account
+</button>
+
+
+            <p class="security-note">
+                🔒 Your information is protected using secure cloud services.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>
+            © 2026 WSERS — Women Safety & Emergency Response System
+        </p>
+    </footer>
+
+
+    <script src="js/config.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@6.3.12/dist/amazon-cognito-identity.min.js"></script>
+
+<script src="js/auth.js"></script>
+</body>
+</html>

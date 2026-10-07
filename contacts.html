@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>WSERS | Emergency Contacts</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<header class="navbar">
+
+    <div class="logo">
+        WSERS
+    </div>
+
+
+    <div class="dashboard-nav">
+
+        <a
+            href="dashboard.html"
+            class="back-link"
+        >
+            ← Dashboard
+        </a>
+
+
+        <button
+            id="logoutButton"
+            class="logout-button"
+        >
+            Logout
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<main class="dashboard-container">
+
+
+    <!-- PAGE INTRODUCTION -->
+
+    <section class="welcome-section">
+
+        <div class="badge">
+            👥 Emergency Contacts
+        </div>
+
+
+        <h1>
+            Your Trusted Contacts
+        </h1>
+
+
+        <p>
+            Add people you trust who may need to know
+            if you activate an emergency alert.
+        </p>
+
+    </section>
+
+
+
+    <!-- UK EMERGENCY NOTICE -->
+
+    <section class="uk-emergency-notice">
+
+        <div class="uk-notice-icon">
+            🚨
+        </div>
+
+
+        <div>
+
+            <strong>
+                In an immediate emergency
+            </strong>
+
+            <p>
+                Call <strong>999</strong> or <strong>112</strong>
+                directly for police, ambulance or fire services.
+                WSERS is an academic cloud-based prototype and
+                does not directly contact emergency services.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CONTACT AREA -->
+
+    <section class="contact-layout">
+
+
+        <!-- ADD CONTACT -->
+
+        <div class="contact-form-card">
+
+
+            <div class="card-icon">
+                ➕
+            </div>
+
+
+            <h2>
+                Add a Trusted Contact
+            </h2>
+
+
+            <p class="card-description">
+                Add someone you trust who could be contacted
+                during an emergency.
+            </p>
+
+
+
+            <form id="contactForm">
+
+
+                <!-- NAME -->
+
+                <div class="input-group">
+
+                    <label for="contactName">
+                        Full Name
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="contactName"
+                        placeholder="e.g. Sarah Johnson"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- UK PHONE -->
+
+                <div class="input-group">
+
+                    <label for="contactPhone">
+                        UK Mobile Number
+                    </label>
+
+
+                    <input
+                        type="tel"
+                        id="contactPhone"
+                        placeholder="+44 7700 900123"
+                        pattern="^\+44\s?7\d{3}\s?\d{6}$"
+                        title="Enter a UK mobile number, e.g. +44 7700 900123"
+                        autocomplete="tel"
+                        required
+                    >
+
+
+                    <small class="field-help">
+                        Example: +44 7700 900123
+                    </small>
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+
+                <div class="input-group">
+
+                    <label for="contactEmail">
+                        Email Address
+                    </label>
+
+
+                    <input
+                        type="email"
+                        id="contactEmail"
+                        placeholder="sarah.johnson@example.co.uk"
+                        autocomplete="email"
+                    >
+
+                </div>
+
+
+
+                <button
+                    type="submit"
+                    id="addContactButton"
+                    class="login-button"
+                >
+                    Add Trusted Contact
+                </button>
+
+
+            </form>
+
+        </div>
+
+
+
+        <!-- SAVED CONTACTS -->
+
+        <div class="contacts-list-card">
+
+
+            <div class="card-icon">
+                👥
+            </div>
+
+
+            <h2>
+                Saved Contacts
+            </h2>
+
+
+            <p class="card-description">
+                Your trusted emergency contacts will appear here.
+            </p>
+
+
+            <div id="contactsList">
+
+
+                <div class="empty-contacts">
+
+                    <div class="empty-icon">
+                        👤
+                    </div>
+
+
+                    <p>
+                        No contacts added yet.
+                    </p>
+
+
+                    <small>
+                        Add a trusted contact using the form.
+                    </small>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- UK SAFETY INFORMATION -->
+
+    <section class="uk-safety-card">
+
+
+        <h2>
+            UK Emergency Information
+        </h2>
+
+
+        <div class="uk-safety-grid">
+
+
+            <div class="uk-safety-item">
+
+                <div class="uk-number">
+                    999
+                </div>
+
+                <div>
+                    <strong>
+                        Emergency services
+                    </strong>
+
+                    <p>
+                        Police, ambulance and fire services.
+                    </p>
+                </div>
+
+            </div>
+
+
+
+            <div class="uk-safety-item">
+
+                <div class="uk-number">
+                    112
+                </div>
+
+                <div>
+                    <strong>
+                        Emergency number
+                    </strong>
+
+                    <p>
+                        UK emergency number available alongside 999.
+                    </p>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <p class="prototype-note">
+
+            WSERS does not automatically call emergency
+            services. The system stores emergency alerts
+            as part of the cloud-based academic prototype.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- PRIVACY -->
+
+    <section class="system-status">
+
+
+        <h2>
+            Contact Information & Privacy
+        </h2>
+
+
+        <p class="privacy-text">
+
+            Only information required for the emergency
+            contact feature should be provided. Contact
+            information is stored in the WSERS cloud database
+            and should not be populated with real personal
+            information during development or testing.
+
+        </p>
+
+
+    </section>
+
+
+</main>
+
+
+
+<footer>
+
+    <p>
+        © 2026 WSERS — Women Safety & Emergency Response System
+    </p>
+
+    <p>
+        Academic project prototype — not an official emergency service.
+    </p>
+
+</footer>
+
+
+
+<script src="js/config.js"></script>
+
+<script src="js/contacts.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WSERS | Safety Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        WSERS
+    </div>
+
+    <div class="dashboard-nav">
+
+        <span id="userEmail">
+            Loading...
+        </span>
+
+        <button id="logoutButton" class="logout-button">
+            Logout
+        </button>
+
+    </div>
+
+</header>
+
+
+<main class="dashboard-container">
+
+
+    <!-- WELCOME -->
+
+    <section class="welcome-section">
+
+        <div>
+
+            <div class="badge">
+                🛡️ Safety Dashboard
+            </div>
+
+            <h1>
+                Stay Safe. Stay Connected.
+            </h1>
+
+            <p>
+                Manage your emergency contacts, share your location
+                and activate an SOS alert when you need assistance.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SOS SECTION -->
+
+    <section class="sos-section">
+
+        <div class="sos-card">
+
+            <div class="sos-icon">
+                🚨
+            </div>
+
+            <h2>
+                Emergency SOS
+            </h2>
+
+            <p>
+                Press the button below to create an emergency alert.
+                Your location will be requested before the alert is sent.
+            </p>
+
+
+            <button
+                id="sosButton"
+                class="sos-button">
+
+                🚨 ACTIVATE SOS
+
+            </button>
+
+
+            <p class="sos-note">
+                Only use this feature during an actual emergency.
+            </p>
+
+        </div>
+
+
+        <!-- LOCATION STATUS -->
+
+        <div class="location-card">
+
+            <div class="card-icon">
+                📍
+            </div>
+
+            <h3>
+                Current Location
+            </h3>
+
+            <p id="locationStatus">
+                Location not captured
+            </p>
+
+            <div id="locationDetails">
+                <span>Latitude: —</span>
+                <span>Longitude: —</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- QUICK ACTIONS -->
+
+    <section class="dashboard-section">
+
+        <h2>
+            Quick Actions
+        </h2>
+
+
+        <div class="dashboard-grid">
+
+
+            <a
+                href="contacts.html"
+                class="dashboard-card">
+
+                <div class="card-icon">
+                    👥
+                </div>
+
+                <h3>
+                    Emergency Contacts
+                </h3>
+
+                <p>
+                    Manage the people you trust in an emergency.
+                </p>
+
+                <span class="card-link">
+                    Manage Contacts →
+                </span>
+
+            </a>
+
+
+
+            <a
+                href="alerts.html"
+                class="dashboard-card">
+
+                <div class="card-icon">
+                    📋
+                </div>
+
+                <h3>
+                    Alert History
+                </h3>
+
+                <p>
+                    View previously created emergency alerts.
+                </p>
+
+                <span class="card-link">
+                    View Alerts →
+                </span>
+
+            </a>
+
+
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    🔐
+                </div>
+
+                <h3>
+                    Secure Authentication
+                </h3>
+
+                <p>
+                    Your account is protected using Amazon Cognito.
+                </p>
+
+                <span class="card-status">
+                    ✓ Authenticated
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SYSTEM STATUS -->
+
+    <section class="system-status">
+
+        <h2>
+            System Status
+        </h2>
+
+
+        <div class="status-grid">
+
+            <div class="status-item">
+
+                <span class="status-dot"></span>
+
+                <div>
+                    <strong>Authentication</strong>
+                    <small>Amazon Cognito</small>
+                </div>
+
+            </div>
+
+
+            <div class="status-item">
+
+                <span class="status-dot"></span>
+
+                <div>
+                    <strong>Emergency API</strong>
+                    <small>API Gateway + Lambda</small>
+                </div>
+
+            </div>
+
+
+            <div class="status-item">
+
+                <span class="status-dot"></span>
+
+                <div>
+                    <strong>Cloud Database</strong>
+                    <small>Amazon DynamoDB</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<footer>
+
+    <p>
+        © 2026 WSERS — Women Safety & Emergency Response System
+    </p>
+
+</footer>
+
+
+
+<script src="js/config.js"></script>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

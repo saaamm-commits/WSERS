@@ -1,0 +1,1060 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f8fc;
+    color: #202124;
+    min-height: 100vh;
+}
+
+
+/* NAVBAR */
+
+.navbar {
+    height: 72px;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.nav-text {
+    font-size: 14px;
+    color: #666;
+}
+
+
+/* MAIN */
+
+.hero {
+    max-width: 1250px;
+    margin: auto;
+
+    min-height: calc(100vh - 130px);
+
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+
+    gap: 70px;
+
+    align-items: center;
+
+    padding: 60px 30px;
+}
+
+
+/* HERO CONTENT */
+
+.badge {
+    display: inline-block;
+
+    padding: 9px 16px;
+
+    border-radius: 30px;
+
+    background: #eeeeee;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    margin-bottom: 25px;
+}
+
+.hero-content h1 {
+    font-size: 58px;
+    line-height: 1.05;
+
+    margin-bottom: 25px;
+}
+
+.hero-content h1 span {
+    color: #444;
+}
+
+.hero-content > p {
+    max-width: 620px;
+
+    font-size: 17px;
+    line-height: 1.7;
+
+    color: #666;
+
+    margin-bottom: 35px;
+}
+
+
+/* FEATURES */
+
+.features {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+.feature-card {
+    background: white;
+
+    border: 1px solid #e6e6e6;
+
+    border-radius: 15px;
+
+    padding: 22px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+.feature-icon {
+    font-size: 25px;
+
+    margin-bottom: 12px;
+}
+
+.feature-card h3 {
+    font-size: 16px;
+
+    margin-bottom: 8px;
+}
+
+.feature-card p {
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    color: #777;
+}
+
+
+/* LOGIN CARD */
+
+.login-card {
+    background: white;
+
+    border: 1px solid #e3e3e3;
+
+    border-radius: 20px;
+
+    padding: 40px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.login-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eeeeee;
+
+    border-radius: 15px;
+
+    font-size: 25px;
+
+    margin-bottom: 20px;
+}
+
+.login-card h2 {
+    font-size: 28px;
+
+    margin-bottom: 8px;
+}
+
+.login-subtitle {
+    color: #777;
+
+    font-size: 14px;
+
+    margin-bottom: 30px;
+}
+
+
+/* INPUTS */
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    width: 100%;
+
+    padding: 14px;
+
+    border: 1px solid #d8d8d8;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #555;
+}
+
+
+/* BUTTONS */
+
+.login-button,
+.register-button {
+    width: 100%;
+
+    padding: 14px;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.login-button {
+    border: none;
+
+    background: #202124;
+
+    color: white;
+}
+
+.login-button:hover {
+    background: #000;
+}
+
+.register-button {
+    background: white;
+
+    border: 1px solid #202124;
+
+    color: #202124;
+}
+
+.register-button:hover {
+    background: #f5f5f5;
+}
+
+
+/* DIVIDER */
+
+.divider {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 25px 0;
+
+    color: #aaa;
+
+    font-size: 12px;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+
+    height: 1px;
+
+    background: #e5e5e5;
+
+    flex: 1;
+}
+
+
+/* SECURITY */
+
+.security-note {
+    text-align: center;
+
+    font-size: 11px;
+
+    color: #888;
+
+    margin-top: 25px;
+
+    line-height: 1.5;
+}
+
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+
+    padding: 25px;
+
+    font-size: 12px;
+
+    color: #888;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .hero-content h1 {
+        font-size: 45px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-text {
+        display: none;
+    }
+}/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard-nav {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.dashboard-nav span {
+    font-size: 13px;
+    color: #666;
+}
+
+.logout-button {
+    padding: 9px 16px;
+
+    border: 1px solid #ddd;
+
+    background: white;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+}
+
+.logout-button:hover {
+    background: #f3f3f3;
+}
+
+
+.dashboard-container {
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 50px 30px;
+}
+
+
+.welcome-section {
+    margin-bottom: 35px;
+}
+
+.welcome-section h1 {
+    font-size: 42px;
+
+    margin: 18px 0 12px;
+}
+
+.welcome-section p {
+    color: #666;
+
+    max-width: 650px;
+
+    line-height: 1.6;
+}
+
+
+
+/* SOS */
+
+.sos-section {
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr;
+
+    gap: 25px;
+
+    margin-bottom: 45px;
+}
+
+
+.sos-card {
+    background: white;
+
+    border: 1px solid #e4e4e4;
+
+    border-radius: 20px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+
+.sos-icon {
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+
+.sos-card h2 {
+    font-size: 28px;
+
+    margin-bottom: 10px;
+}
+
+
+.sos-card p {
+    color: #666;
+
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+}
+
+
+.sos-button {
+    width: 220px;
+
+    height: 65px;
+
+    border-radius: 35px;
+
+    border: none;
+
+    background: #222;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.sos-button:hover {
+    transform: scale(1.03);
+
+    background: #000;
+}
+
+
+.sos-button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+.sos-note {
+    font-size: 11px !important;
+
+    margin-top: 18px;
+
+    margin-bottom: 0 !important;
+}
+
+
+
+/* LOCATION */
+
+.location-card {
+    background: white;
+
+    border: 1px solid #e4e4e4;
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+
+.card-icon {
+    font-size: 30px;
+
+    margin-bottom: 15px;
+}
+
+
+.location-card h3 {
+    margin-bottom: 10px;
+}
+
+
+.location-card p {
+    color: #777;
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+}
+
+
+#locationDetails {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    font-size: 13px;
+
+    color: #555;
+}
+
+
+
+/* QUICK ACTIONS */
+
+.dashboard-section {
+    margin-bottom: 45px;
+}
+
+
+.dashboard-section > h2 {
+    margin-bottom: 20px;
+}
+
+
+.dashboard-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.dashboard-card {
+    display: block;
+
+    background: white;
+
+    border: 1px solid #e4e4e4;
+
+    border-radius: 16px;
+
+    padding: 25px;
+
+    text-decoration: none;
+
+    color: #202124;
+
+    transition: 0.2s;
+}
+
+
+.dashboard-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+
+.dashboard-card h3 {
+    margin-bottom: 10px;
+}
+
+
+.dashboard-card p {
+    font-size: 13px;
+
+    color: #777;
+
+    line-height: 1.5;
+
+    margin-bottom: 20px;
+}
+
+
+.card-link {
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+.card-status {
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+
+/* SYSTEM STATUS */
+
+.system-status {
+    background: white;
+
+    border: 1px solid #e4e4e4;
+
+    border-radius: 16px;
+
+    padding: 30px;
+}
+
+
+.system-status h2 {
+    margin-bottom: 25px;
+}
+
+
+.status-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.status-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.status-dot {
+    width: 10px;
+
+    height: 10px;
+
+    background: #333;
+
+    border-radius: 50%;
+}
+
+
+.status-item strong {
+    display: block;
+
+    font-size: 14px;
+}
+
+
+.status-item small {
+    color: #888;
+
+    font-size: 11px;
+}
+
+
+
+/* MOBILE DASHBOARD */
+
+@media (max-width: 900px) {
+
+    .sos-section {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .status-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-section h1 {
+        font-size: 34px;
+    }
+
+    .dashboard-nav span {
+        display: none;
+    }
+
+}/* =========================
+   EMERGENCY CONTACTS
+========================= */
+
+.back-link {
+    text-decoration: none;
+
+    color: #444;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.contact-layout {
+    display: grid;
+
+    grid-template-columns: 0.9fr 1.1fr;
+
+    gap: 25px;
+
+    margin-bottom: 35px;
+}
+
+
+.contact-form-card,
+.contacts-list-card {
+    background: white;
+
+    border: 1px solid #e4e4e4;
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+
+.contact-form-card h2,
+.contacts-list-card h2 {
+    margin-bottom: 10px;
+}
+
+
+.card-description {
+    color: #777;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    margin-bottom: 25px;
+}
+
+
+.empty-contacts {
+    border: 1px dashed #d8d8d8;
+
+    border-radius: 14px;
+
+    padding: 40px 20px;
+
+    text-align: center;
+}
+
+
+.empty-icon {
+    font-size: 35px;
+
+    margin-bottom: 12px;
+}
+
+
+.empty-contacts p {
+    font-weight: 600;
+
+    margin-bottom: 6px;
+}
+
+
+.empty-contacts small {
+    color: #888;
+}
+
+
+.privacy-text {
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+@media (max-width: 900px) {
+
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+
+}.saved-contact {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 18px;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 14px;
+
+    margin-bottom: 12px;
+
+    background: #fafafa;
+}
+
+
+.saved-contact-icon {
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 12px;
+
+    background: #eeeeee;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+}
+
+
+.saved-contact-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.saved-contact-info strong {
+    font-size: 15px;
+}
+
+
+.saved-contact-info span {
+    font-size: 12px;
+
+    color: #666;
+}/* =========================
+   UK SAFETY CONTACTS
+========================= */
+
+.uk-emergency-notice {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    background: #f7f7f7;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 16px;
+
+    padding: 22px 25px;
+
+    margin-bottom: 30px;
+}
+
+
+.uk-notice-icon {
+    font-size: 28px;
+
+    flex-shrink: 0;
+}
+
+
+.uk-emergency-notice strong {
+    font-size: 15px;
+}
+
+
+.uk-emergency-notice p {
+    margin: 7px 0 0;
+
+    color: #666;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+
+/* UK PHONE HELP */
+
+.field-help {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #888;
+
+    font-size: 11px;
+}
+
+
+
+/* UK SAFETY INFORMATION */
+
+.uk-safety-card {
+    background: white;
+
+    border: 1px solid #e4e4e4;
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    margin-bottom: 30px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+}
+
+
+.uk-safety-card h2 {
+    margin-bottom: 22px;
+}
+
+
+.uk-safety-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+}
+
+
+.uk-safety-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 18px;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 14px;
+
+    background: #fafafa;
+}
+
+
+.uk-number {
+    font-size: 25px;
+
+    font-weight: 800;
+
+    min-width: 55px;
+}
+
+
+.uk-safety-item strong {
+    display: block;
+
+    font-size: 14px;
+
+    margin-bottom: 4px;
+}
+
+
+.uk-safety-item p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+.prototype-note {
+    margin-top: 22px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #eeeeee;
+
+    color: #777;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+
+/* FOOTER */
+
+footer p + p {
+    margin-top: 5px;
+
+    font-size: 11px;
+
+    color: #999;
+}
+
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .uk-safety-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .uk-emergency-notice {
+        padding: 18px;
+    }
+
+
+    .uk-safety-card {
+        padding: 22px;
+    }
+
+}

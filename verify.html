@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>WSERS | Verify Account</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<header class="navbar">
+
+    <div class="logo">
+        WSERS
+    </div>
+
+    <div class="nav-text">
+        Women Safety & Emergency Response System
+    </div>
+
+</header>
+
+
+<main class="hero">
+
+
+<section class="hero-content">
+
+    <div class="badge">
+        ✉️ Email Verification
+    </div>
+
+
+    <h1>
+        Verify your<br>
+        <span>WSERS account.</span>
+    </h1>
+
+
+    <p>
+        We have sent a verification code to your
+        registered email address. Enter the code
+        to activate your account.
+    </p>
+
+</section>
+
+
+
+<section class="login-card">
+
+
+    <div class="login-icon">
+        ✉️
+    </div>
+
+
+    <h2>
+        Verify Account
+    </h2>
+
+
+    <p class="login-subtitle">
+        Enter the verification code sent to your email.
+    </p>
+
+
+    <form id="verifyForm">
+
+
+        <div class="input-group">
+
+            <label for="verificationCode">
+                Verification Code
+            </label>
+
+
+            <input
+                type="text"
+                id="verificationCode"
+                placeholder="Enter verification code"
+                required
+            >
+
+        </div>
+
+
+        <button
+            type="submit"
+            class="login-button"
+        >
+            Verify Account
+        </button>
+
+
+    </form>
+
+
+    <div class="divider">
+        <span>OR</span>
+    </div>
+
+
+    <button
+        class="register-button"
+        onclick="window.location.href='index.html'"
+    >
+        Back to Sign In
+    </button>
+
+
+    <p class="security-note">
+        🔒 Your account is protected using Amazon Cognito.
+    </p>
+
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 WSERS — Women Safety & Emergency Response System
+    </p>
+
+</footer>
+
+
+
+<script src="js/config.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@6.3.12/dist/amazon-cognito-identity.min.js"></script>
+
+
+<script src="js/auth.js"></script>
+
+
+<script>
+
+const verifyForm =
+    document.getElementById("verifyForm");
+
+
+if (verifyForm) {
+
+    verifyForm.addEventListener(
+        "submit",
+        function (event) {
+
+            event.preventDefault();
+
+
+            const code =
+                document
+                    .getElementById("verificationCode")
+                    .value
+                    .trim();
+
+
+            const email =
+                localStorage.getItem(
+                    "pendingVerificationEmail"
+                );
+
+
+            if (!email) {
+
+                alert(
+                    "Verification session not found. Please register again."
+                );
+
+                return;
+            }
+
+
+            if (!code) {
+
+                alert(
+                    "Please enter the verification code."
+                );
+
+                return;
+            }
+
+
+            const userData = {
+
+                Username: email,
+
+                Pool: userPool
+
+            };
+
+
+            const cognitoUser =
+                new AmazonCognitoIdentity.CognitoUser(
+                    userData
+                );
+
+
+            cognitoUser.confirmRegistration(
+                code,
+                true,
+
+                function (error, result) {
+
+                    if (error) {
+
+                        console.error(error);
+
+                        alert(
+                            error.message ||
+                            "Verification failed."
+                        );
+
+                        return;
+                    }
+
+
+                    console.log(
+                        "Account verified:",
+                        result
+                    );
+
+
+                    localStorage.removeItem(
+                        "pendingVerificationEmail"
+                    );
+
+
+                    alert(
+                        "Account verified successfully! You can now sign in."
+                    );
+
+
+                    window.location.href =
+                        "index.html";
+
+                }
+            );
+
+        }
+    );
+
+}
+
+</script>
+
+
+</body>
+
+</html>
